@@ -1,11 +1,16 @@
 import React, { useContext } from "react";
 import "./Portfolio.css";
 import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, EffectCoverflow, Pagination, Scrollbar, A11y } from 'swiper';
 import "swiper/css";
-import Sidebar from "../../img/sidebar.png";
-import Ecommerce from "../../img/ecommerce.png";
-import HOC from "../../img/hoc.png";
-import MusicApp from "../../img/musicapp.png";
+import Krishna from "../../img/Krishna.jpg";
+import IceAndFire from "../../img/ice and fire.jpg";
+import Abstract from "../../img/abstract art.jpg";
+import Ganesh from "../../img/ganesh.jpg";
+import WomenInWoods from "../../img/women in woods.jpg";
+import FireWomen from "../../img/Fire Women.jpg";
+import BlueMoon from "../../img/Blue moon.jpg";
+import ShriRam from "../../img/Shri Ram.jpg";
 import { themeContext } from "../../Context";
 const Portfolio = () => {
   const theme = useContext(themeContext);
@@ -13,27 +18,49 @@ const Portfolio = () => {
   return (
     <div className="portfolio" id="portfolio">
       {/* heading */}
-      <span style={{color: darkMode?'white': ''}}>Recent Projects</span>
-      <span>Portfolio</span>
+      <span style={{color: darkMode?'white': ''}}>Hobbies</span>
+      <span>Abstract Arts</span>
 
       {/* slider */}
       <Swiper
-        spaceBetween={30}
-        slidesPerView={3}
+        effect={"coverflow"}
         grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
         className="portfolio-slider"
       >
         <SwiperSlide>
-          <img src={Sidebar} alt="" />
+          <img src={Krishna} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={Ecommerce} alt="" />
+          <img src={FireWomen} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={MusicApp} alt="" />
+          <img src={IceAndFire} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={HOC} alt="" />
+          <img src={Abstract} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={BlueMoon} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={Ganesh} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={WomenInWoods} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={ShriRam} alt="" />
         </SwiperSlide>
       </Swiper>
     </div>

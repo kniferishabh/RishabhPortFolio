@@ -24,12 +24,13 @@ const Services = () => {
       {/* left side */}
       <div className="awesome">
         {/* dark mode */}
-        <span style={{ color: darkMode ? "white" : "" }}>My Awesome</span>
-        <span>services</span>
+        <span style={{ color: darkMode ? "white" : "" }}>Who am I ?</span>
+        <span></span>
         <spane>
-          Lorem ispum is simpley dummy text of printing of printing Lorem
+        I am a Full Stack Developer, and I'm very passionate and dedicated to my work.
           <br />
-          ispum is simpley dummy text of printing
+          <br />
+          With 4+ years of experience as a full stack developer, I have acquired the skills and knowledge necessary to make project a success.
         </spane>
         <a href={Resume} download>
           <button className="button s-button">Download CV</button>
@@ -46,8 +47,8 @@ const Services = () => {
         >
           <Card
             emoji={HeartEmoji}
-            heading={"Design"}
-            detail={"Figma, Sketch, Photoshop, Adobe Illustrator, Adobe xd"}
+            heading={"Backend"}
+            detail={"Java, J2EE, Spring, Spring Boot, REST API"}
           />
         </motion.div>
         {/* second card */}
@@ -58,8 +59,8 @@ const Services = () => {
         >
           <Card
             emoji={Glasses}
-            heading={"Developer"}
-            detail={"Html, Css, JavaScript, React, Nodejs, Express"}
+            heading={"Frontend"}
+            detail={"Html, CSS, JavaScript, React, Nodejs, Express"}
           />
         </motion.div>
         {/* 3rd */}
@@ -70,9 +71,9 @@ const Services = () => {
         >
           <Card
             emoji={Humble}
-            heading={"UI/UX"}
+            heading={"Others"}
             detail={
-              "Lorem ispum dummy text are usually use in section where we need some random text"
+              "Sql, PL/SQL, Jasper Report, Postgres"
             }
             color="rgba(252, 166, 31, 0.45)"
           />

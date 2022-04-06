@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import "./Works.css";
 import Upwork from "../../img/Upwork.png";
+import Nec from "../../img/nec.jpg";
+import Solveda from "../../img/solveda.png";
 import Fiverr from "../../img/fiverr.png";
 import Amazon from "../../img/amazon.png";
 import Shopify from "../../img/Shopify.png";
@@ -23,16 +25,16 @@ const Works = () => {
           <span style={{ color: darkMode ? "white" : "" }}>
             Works for All these
           </span>
-          <span>Brands & Clients</span>
+          <span>Brands</span>
           <spane>
-            Lorem ispum is simpley dummy text of printing of printing Lorem
+            {/* Lorem ispum is simpley dummy text of printing of printing Lorem
             <br />
             ispum is simpley dummy text of printingLorem ispum is simpley dummy
             text
             <br />
             y dummy text of printingLorem
             <br />
-            ispum is simpley dummy text of printing
+            ispum is simpley dummy text of printing */}
           </spane>
           <Link to="contact" smooth={true} spy={true}>
             <button className="button s-button">Hire Me</button>
@@ -54,19 +56,19 @@ const Works = () => {
           className="w-mainCircle"
         >
           <div className="w-secCircle">
-            <img src={Upwork} alt="" />
+            <img src={Nec} alt="NEC" />
+          </div>
+          {/* <div className="w-secCircle">
+            <img src="" alt="" />
           </div>
           <div className="w-secCircle">
-            <img src={Fiverr} alt="" />
-          </div>
-          <div className="w-secCircle">
-            <img src={Amazon} alt="" />
+            <img src="" alt="" />
           </div>{" "}
           <div className="w-secCircle">
-            <img src={Shopify} alt="" />
-          </div>
+            <img src="" alt="" />
+          </div> */}
           <div className="w-secCircle">
-            <img src={Facebook} alt="" />
+            <img src={Solveda} alt="Solveda" />
           </div>
         </motion.div>
         {/* background Circles */}
