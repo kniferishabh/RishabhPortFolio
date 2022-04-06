@@ -56,7 +56,7 @@ const Works = () => {
           className="w-mainCircle"
         >
           <div className="w-secCircle">
-            <img src={Nec} alt="NEC" />
+            <img src={Nec} alt="NEC" onClick={() => { window.location.href = 'https://www.nec.com/' }}/>
           </div>
           {/* <div className="w-secCircle">
             <img src="" alt="" />
@@ -68,7 +68,7 @@ const Works = () => {
             <img src="" alt="" />
           </div> */}
           <div className="w-secCircle">
-            <img src={Solveda} alt="Solveda" />
+            <img src={Solveda} alt="Solveda" onClick={() => { window.location.href = 'https://www.solveda.com/' }} />
           </div>
         </motion.div>
         {/* background Circles */}

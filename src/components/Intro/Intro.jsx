@@ -33,13 +33,13 @@ const Intro = () => {
           
         </div>
         <Link to="contact" smooth={true} spy={true}>
-          <button className="button i-button">Hire me</button>
+          <button className="button i-button">Connect</button>
         </Link>
         {/* social icons */}
         <div className="i-icons">
-          <img src={Github} alt="" />
-          <img src={LinkedIn} alt="" />
-          <img src={Instagram} alt="" />
+          <img src={Github} alt="" onClick={() => { window.location.href = 'https://github.com/kniferishabh' }} />
+          <img src={LinkedIn} alt="" onClick={() => { window.location.href = 'https://www.linkedin.com/in/rishabh-maheshwari-38a2b0112/' }} />
+          <img src={Instagram} alt="" onClick={() => { window.location.href = 'https://www.instagram.com/rishabh_maheshwari16/' }} />
         </div>
       </div>
       {/* right image side */}

@@ -93,6 +93,10 @@
   transform: scale(0.6);
 }
 
+.w-secCircle >*:hover {
+  cursor: pointer;
+}
+
 .w-backCircle {
   position: absolute;
   height: 13rem;
