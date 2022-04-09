@@ -11,6 +11,7 @@ import WomenInWoods from "../../img/women in woods.jpg";
 import FireWomen from "../../img/Fire Women.jpg";
 import BlueMoon from "../../img/Blue moon.jpg";
 import ShriRam from "../../img/Shri Ram.jpg";
+import RedRain from "../../img/Red Rain.jpg";
 import { themeContext } from "../../Context";
 const Portfolio = () => {
   const theme = useContext(themeContext);
@@ -59,6 +60,9 @@ const Portfolio = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img src={BlueMoon} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={RedRain} alt="" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={Ganesh} alt="" />
