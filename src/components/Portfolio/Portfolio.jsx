@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./Portfolio.css";
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, EffectCoverflow, Pagination, Scrollbar, A11y } from 'swiper';
+import { Autoplay, Navigation, EffectCoverflow, Pagination, Scrollbar, A11y } from 'swiper';
 import "swiper/css";
 import Krishna from "../../img/Krishna.jpg";
 import IceAndFire from "../../img/ice and fire.jpg";
@@ -24,6 +24,14 @@ const Portfolio = () => {
       {/* slider */}
       <Swiper
         effect={"coverflow"}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={"auto"}
@@ -34,8 +42,7 @@ const Portfolio = () => {
           modifier: 1,
           slideShadows: false,
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[Autoplay, EffectCoverflow, Navigation, Pagination]}
         className="portfolio-slider"
       >
         <SwiperSlide>

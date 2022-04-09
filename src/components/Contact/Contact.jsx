@@ -6,16 +6,34 @@ const Contact = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
   const form = useRef();
-  const [done, setDone] = useState(false)
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState(false);
+  const [disableButton, setDisableButton] = useState(false);
+  const [email, setEmail] = useState(null);
+  const [name, setName] = useState(null);
+  const [message, setMessage] = useState(null);
+  const [emailValid, setEmailValid] = useState(false);
+  const [displayMessage, setDisplayMeesage] = useState(null);
+  
+  const isValidEmailAddress = (name, address, message) => {
+    if(name && address && message){
+      return !! address.match(/.+@.+/);
+    }
+    return false;    
+}
+
   const sendEmail = (e) => {
+    
     e.preventDefault();
 
-    emailjs
+    if(emailValid){
+      console.log("################", emailValid);
+      emailjs
       .sendForm(
-        "service_2mu5xtl",
-        "template_m5udu2c",
+        "service_xewgg3d",
+        "template_zvzrauh",
         form.current,
-        "VLwg1ltOWvnCYAiK_"
+        "88HoSaGFBMVrMt6Nd"
       )
       .then(
         (result) => {
@@ -27,6 +45,15 @@ const Contact = () => {
           console.log(error.text);
         }
       );
+      setEmail("");
+      setName("");
+      setMessage("");
+      setDisplayMeesage("Thanks for Contacting me !")
+    }
+    else {
+      setError(true);
+      setDisplayMeesage("All fields are required")
+    }
   };
 
   return (
@@ -45,12 +72,15 @@ const Contact = () => {
       </div>
       {/* right side form */}
       <div className="c-right">
-        <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name="user_name" className="user"  placeholder="Name"/>
-          <input type="email" name="user_email" className="user" placeholder="Email"/>
-          <textarea name="message" className="user" placeholder="Message"/>
-          <input type="submit" value="Send" className="button"/>
-          <span>{done && "Thanks for Contacting me"}</span>
+        <form ref={form} onBlur={() => setEmailValid(isValidEmailAddress(name, email, message))} onSubmit={sendEmail}>
+          <input type="text" name="user_name" className="user" placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
+          
+          <input type="email" name="user_email" className="user" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+
+          <textarea name="message" className="user" placeholder="Message" value={message} onChange={e => setMessage(e.target.value)} />
+          
+          <input type="submit" value="Send" className="button" disabled={disableButton}/>
+          <span style={{fontStyle: "italic"}}>{displayMessage}</span>
           <div
             className="blur c-blur1"
             style={{ background: "var(--purple)" }}
